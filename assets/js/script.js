@@ -49,16 +49,14 @@ for (let i = 0; i < testimonialsItem.length; i++) {
 
 }
 
-// add click event to modal close button
-modalCloseBtn.addEventListener("click", testimonialsModalFunc);
-overlay.addEventListener("click", testimonialsModalFunc);
+
 
 
 
 // custom select variables
 const select = document.querySelector("[data-select]");
 const selectItems = document.querySelectorAll("[data-select-item]");
-const selectValue = document.querySelector("[data-selecct-value]");
+const selectValue = document.querySelector("[data-select-value]");
 const filterBtn = document.querySelectorAll("[data-filter-btn]");
 
 select.addEventListener("click", function () { elementToggleFunc(this); });
@@ -82,17 +80,32 @@ const filterFunc = function (selectedValue) {
 
   for (let i = 0; i < filterItems.length; i++) {
 
+    // Check if selectedValue is "all"
     if (selectedValue === "all") {
       filterItems[i].classList.add("active");
-    } else if (selectedValue === filterItems[i].dataset.category) {
-      filterItems[i].classList.add("active");
     } else {
-      filterItems[i].classList.remove("active");
+      // Split the categories from the data-category attribute
+      const itemCategories = filterItems[i].dataset.category.split(",");
+
+      // Check if any of the item categories match the selectedValue
+      let itemMatches = false;
+      for (let j = 0; j < itemCategories.length; j++) {
+        if (selectedValue.toLowerCase() === itemCategories[j].trim().toLowerCase()) {
+          itemMatches = true;
+          break; // Exit the inner loop if a match is found
+        }
+      }
+
+      // Apply active class based on the match
+      if (itemMatches) {
+        filterItems[i].classList.add("active");
+      } else {
+        filterItems[i].classList.remove("active");
+      }
     }
-
   }
-
 }
+
 
 // add event in all filter button items for large screen
 let lastClickedBtn = filterBtn[0];
