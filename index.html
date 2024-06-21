@@ -908,7 +908,7 @@
 
           <h3 class="h3 form-title">Contact Form</h3>
 
-          <form action="https://us-central1-personal-website-427115.cloudfunctions.net/contact-faisal" class="form" data-form>
+          <form id="contactForm" action="https://us-central1-personal-website-427115.cloudfunctions.net/contact-faisal" class="form" data-form>
 
             <div class="input-wrapper">
               <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
@@ -948,6 +948,45 @@
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function() {
+      $("#contactForm").submit(function(event) {
+        // Prevent default form submission behavior
+        event.preventDefault();
+  
+        // Get form data
+        var name = $("#contactForm input[name='fullname']").val();
+        var email = $("#contactForm input[name='email']").val();
+        var message = $("#contactForm textarea[name='message']").val();
+  
+        // Prepare data for AJAX request
+        var data = {
+          name: name,
+          email: email,
+          message: message
+        };
+  
+        // Send AJAX request to Cloud Function
+        $.ajax({
+          url: "https://REGION-PROJECT_ID.cloudfunctions.net/contactFormFunction", // Replace with your Cloud Function URL
+          method: "POST",
+          data: data,
+          dataType: "json", // Expected response format
+          success: function(response) {
+            // Handle successful submission
+            $("#contactForm").html(response.message); // Replace form content with success message
+          },
+          error: function(jqXHR, textStatus, errorThrown) {
+            // Handle errors
+            console.error("Error submitting form:", textStatus, errorThrown);
+            $("#contactForm").html("<p>An error occurred. Please try again later.</p>");
+          }
+        });
+      });
+    });
+  </script>
+  
 
 </body>
 
