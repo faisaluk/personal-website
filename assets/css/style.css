@@ -1128,6 +1128,26 @@ textarea.form-input::-webkit-resizer { display: none; }
 \*-----------------------------------*/
 
 /**
+ * responsive larger than 350px screen
+ */
+
+ @media (min-width: 350px) {
+
+  /**
+   * #NAVBAR
+   */
+
+   .navbar { border-radius: 20px 20px 0 0; }
+
+   .navbar-list { gap: 20px; }
+ 
+   .navbar-link { --fs-8: 14px; }
+
+  }
+
+
+
+/**
  * responsive larger than 450px screen
  */
 
