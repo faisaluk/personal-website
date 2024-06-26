@@ -145,12 +145,6 @@
           </li>
 
           <li class="social-item">
-            <a href="https://x.com/faisaluk_" class="social-link" target="_blank">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a>
-          </li>
-
-          <li class="social-item">
             <a href="https://instagram.com/faisaluk_" class="social-link" target="_blank">
               <ion-icon name="logo-instagram"></ion-icon>
             </a>
@@ -474,7 +468,7 @@
 
           <ul class="project-list">
 
-            <li class="project-item  active" data-filter-item data-category="technology">
+            <li class="project-item active" data-filter-item data-category="technology">
               <a href="https://dandalee.com" target="_blank">
 
                 <figure class="project-img">
@@ -482,7 +476,7 @@
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/Company-Dandalee.png" alt="Dandalee" loading="lazy">
+                  <img src="./assets/images/Company-Dandalee.jpg" alt="Dandalee" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">Dandalee</h3>
@@ -492,15 +486,15 @@
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="education, media">
-              <a href="https://archi-tech.network">
+            <li class="project-item active" data-filter-item data-category="education, media">
+              <a href="https://archi-tech.network" target="_blank">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/Company-ATN.png" alt="Archi-Tech Network" loading="lazy">
+                  <img src="./assets/images/Company-ATN.jpg" alt="Archi-Tech Network" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">Archi-Tech Network</h3>
@@ -510,15 +504,15 @@
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="technology, education">
-              <a href="https://illusorr.com">
+            <li class="project-item active" data-filter-item data-category="technology, education">
+              <a href="https://illusorr.com" target="_blank">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/Company-ILLUSORR.png" alt="ILLUSORR" loading="lazy">
+                  <img src="./assets/images/Company-ILLUSORR.jpg" alt="ILLUSORR" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">ILLUSORR</h3>
@@ -528,15 +522,15 @@
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="media">
-              <a href="https://www.instagram.com/ark_ae_/">
+            <li class="project-item active" data-filter-item data-category="media">
+              <a href="https://www.instagram.com/ark_ae_/" target="_blank">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/Company-ARK.png" alt="ARK" loading="lazy">
+                  <img src="./assets/images/Company-ARK.jpg" alt="ARK" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">ARK</h3>
@@ -546,15 +540,15 @@
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="technology, education">
-              <a href="https://dandb.tech/">
+            <li class="project-item active" data-filter-item data-category="technology, education">
+              <a href="https://dandb.tech/" target="_blank">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/Company-D&B.png" alt="D&B Emerging Tech" loading="lazy">
+                  <img src="./assets/images/Company-D&B.jpg" alt="D&B Emerging Tech" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">D&B Emerging Tech</h3>
@@ -564,15 +558,15 @@
               </a>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="media">
-              <a href="https://www.instagram.com/all_of_archi/reels/">
+            <li class="project-item active" data-filter-item data-category="media">
+              <a href="https://www.instagram.com/all_of_archi/reels/" target="_blank">
 
                 <figure class="project-img">
                   <div class="project-item-icon-box">
                     <ion-icon name="eye-outline"></ion-icon>
                   </div>
 
-                  <img src="./assets/images/Company-AOA.png" alt="AOA Talks" loading="lazy">
+                  <img src="./assets/images/Company-AOA.jpg" alt="AOA Talks" loading="lazy">
                 </figure>
 
                 <h3 class="project-title">AOA Talks</h3>
@@ -604,13 +598,67 @@
 
         <section class="press-posts">
 
+          <ul class="press-filter-list">
+
+            <li class="press-filter-item">
+              <button class="active" press-data-filter-btn>All</button>
+            </li>
+
+            <li class="press-filter-item">
+              <button press-data-filter-btn>Article</button>
+            </li>
+
+            <li class="press-filter-item">
+              <button press-data-filter-btn>Podcast</button>
+            </li>
+
+            <li class="press-filter-item">
+              <button press-data-filter-btn>Event</button>
+            </li>
+
+          </ul>
+
+          <div class="press-filter-select-box">
+
+            <button class="press-filter-select" press-data-select>
+
+              <div class="press-select-value" press-data-select-value>Select category</div>
+
+              <div class="press-select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+
+            </button>
+
+            <ul class="press-select-list">
+
+              <li class="press-select-item">
+                <button press-data-select-item>All</button>
+              </li>
+
+              <li class="press-select-item">
+                <button press-data-select-item>Article</button>
+              </li>
+
+              <li class="press-select-item">
+                <button press-data-select-item>Podcast</button>
+              </li>
+
+              <li class="press-select-item">
+                <button press-data-select-item>Event</button>
+              </li>
+
+            </ul>
+
+          </div>
+
           <ul class="press-posts-list">
 
-            <li class="press-post-item active" data-filter-item data-category="article">
-              <a href="https://www.vanguardngr.com/2023/11/db-emerging-tech-partners-institute-of-architects-on-digital-transformation/">
+            <li class="press-post-item active" press-data-filter-item press-data-category="article">
+              <a href="https://www.vanguardngr.com/2023/11/db-emerging-tech-partners-institute-of-architects-on-digital-transformation/" target="_blank">
 
                 <figure class="press-banner-box">
-                  <img src="./assets/images/Partnership.png" alt="D&B Emerging Tech partners with NIAABC" loading="lazy">
+                  <img src="./assets/images/Vanguard-Article.jpg" alt="D&B Emerging Tech partners with NIAABC" loading="lazy">
                 </figure>
 
                 <div class="press-content">
@@ -634,11 +682,11 @@
               </a>
             </li>
 
-            <li class="press-post-item">
-              <a href="https://www.dandb.tech/post/our-new-book-is-finally-here-bim-for-architectural-firms-a-short-introduction">
+            <li class="press-post-item active" press-data-filter-item press-data-category="article">
+              <a href="https://www.dandb.tech/post/our-new-book-is-finally-here-bim-for-architectural-firms-a-short-introduction" target="_blank">
 
                 <figure class="press-banner-box">
-                  <img src="./assets/images/Blue and Pink Soft Magazine Cover Mockup Instagram Post.png" alt="BIM FOR ARCHITECTURAL FIRMS: A Short Introduction" loading="lazy">
+                  <img src="./assets/images/New-Book-Launch.jpg" loading="lazy">
                 </figure>
 
                 <div class="press-content">
@@ -648,7 +696,7 @@
 
                     <span class="dot"></span>
 
-                    <time datetime="2022-02-23">Jul 26, 2023</time>
+                    <time datetime="2023-07-26">Jul 26, 2023</time>
                   </div>
 
                   <h3 class="h3 press-item-title">New Book Launch</h3>
@@ -662,11 +710,11 @@
               </a>
             </li>
 
-<li class="press-post-item">
-              <a href="https://www.youtube.com/watch?v=q3uX5ChZ27I">
+            <li class="press-post-item active" press-data-filter-item press-data-category="podcast">
+              <a href="https://www.youtube.com/watch?v=q3uX5ChZ27I" target="_blank">
 
                 <figure class="press-banner-box">
-                  <img src="./assets/images/Creator Sessions Podcast.png" alt="BIM FOR ARCHITECTURAL FIRMS: A Short Introduction" loading="lazy">
+                  <img src="./assets/images/Creator-Sessions-Podcast.jpg" alt="BIM FOR ARCHITECTURAL FIRMS: A Short Introduction" loading="lazy">
                 </figure>
 
                 <div class="press-content">
@@ -676,7 +724,7 @@
 
                     <span class="dot"></span>
 
-                    <time datetime="2022-02-23">Nov 11, 2022</time>
+                    <time datetime="2022-11-11">Nov 11, 2022</time>
                   </div>
 
                   <h3 class="h3 press-item-title">Creator Sessions Podcast</h3>
@@ -690,8 +738,8 @@
               </a>
             </li>
 
-            <li class="press-post-item">
-              <a href="https://www.instagram.com/p/ChAzf8oo097">
+            <li class="press-post-item active" press-data-filter-item press-data-category="podcast">
+              <a href="https://www.instagram.com/p/ChAzf8oo097" target="_blank">
 
                 <figure class="press-banner-box">
                   <img src="./assets/images/Ai Art in Architecture.png" alt="Ai Art in Architecture" loading="lazy">
@@ -704,7 +752,7 @@
 
                     <span class="dot"></span>
 
-                    <time datetime="2022-02-23">Aug 8, 2022</time>
+                    <time datetime="2022-08-08">Aug 8, 2022</time>
                   </div>
 
                   <h3 class="h3 press-item-title">Instagram Live with Hamza</h3>
@@ -718,11 +766,11 @@
               </a>
             </li>
 
-            <li class="press-post-item">
-              <a href="https://www.ibc.org/features/into-the-broadcast-metaverse-with-vizrt-adobe-and-trt/8700.article">
+            <li class="press-post-item active" press-data-filter-item press-data-category="article">
+              <a href="https://www.ibc.org/features/into-the-broadcast-metaverse-with-vizrt-adobe-and-trt/8700.article" target="_blank">
 
                 <figure class="press-banner-box">
-                  <img src="./assets/images/0013.png" alt="Switching onto the TRT TV metaverse" loading="lazy">
+                  <img src="./assets/images/IBC-Article-By-Steve-Jarratt.jpg" alt="Switching onto the TRT TV metaverse" loading="lazy">
                 </figure>
 
                 <div class="press-content">
@@ -732,7 +780,7 @@
 
                     <span class="dot"></span>
 
-                    <time datetime="2022-02-23">Jul 21, 2022</time>
+                    <time datetime="2022-07-21">Jul 21, 2022</time>
                   </div>
 
                   <h3 class="h3 press-item-title">IBC Article by Steve Jarratt</h3>
@@ -746,11 +794,11 @@
               </a>
             </li>
 
-            <li class="press-post-item">
-              <a href="https://www.illusorr.com/post/trt-international-metaverse-broadcasting-forum">
+            <li class="press-post-item active" press-data-filter-item press-data-category="article">
+              <a href="https://www.illusorr.com/post/trt-international-metaverse-broadcasting-forum" target="_blank">
 
                 <figure class="press-banner-box">
-                  <img src="./assets/images/TRT 2.webp" alt="TRT International Metaverse & Broadcasting Forum" loading="lazy">
+                  <img src="./assets/images/ILLUSORR-TRT-Forum-Article.jpg" alt="TRT International Metaverse & Broadcasting Forum" loading="lazy">
                 </figure>
 
                 <div class="press-content">
@@ -760,7 +808,7 @@
 
                     <span class="dot"></span>
 
-                    <time datetime="2022-02-23">Jul 20, 2022</time>
+                    <time datetime="2022-07-20">Jul 20, 2022</time>
                   </div>
 
                   <h3 class="h3 press-item-title">ILLUSORR TRT Forum Article</h3>
@@ -774,8 +822,8 @@
               </a>
             </li>
 
-            <li class="press-post-item">
-              <a href="https://www.instagram.com/p/Cf1kBGFlhda">
+            <li class="press-post-item active" press-data-filter-item press-data-category="podcast">
+              <a href="https://www.instagram.com/p/Cf1kBGFlhda" target="_blank">
 
                 <figure class="press-banner-box">
                   <img src="./assets/images/Metaverse Multiple Realities.png" alt="How and Why Architects have to develop the Metaverse?" loading="lazy">
@@ -788,7 +836,7 @@
 
                     <span class="dot"></span>
 
-                    <time datetime="2022-02-23">Jul 10, 2022</time>
+                    <time datetime="2022-07-10">Jul 10, 2022</time>
                   </div>
 
                   <h3 class="h3 press-item-title">Instagram Live with ArchiDAO</h3>
@@ -802,11 +850,11 @@
               </a>
             </li>
 
-            <li class="press-post-item">
-              <a href="https://www.trtworld.com/magazine/groundbreaking-and-revolutionary-trt-enters-the-metaverse-57874">
+            <li class="press-post-item active" press-data-filter-item press-data-category="article">
+              <a href="https://www.trtworld.com/magazine/groundbreaking-and-revolutionary-trt-enters-the-metaverse-57874" target="_blank">
 
                 <figure class="press-banner-box">
-                  <img src="./assets/images/TRT 1.JPG" alt="TRT enters the Metaverse" loading="lazy">
+                  <img src="./assets/images/TRT-World-Article.jpg" alt="TRT enters the Metaverse" loading="lazy">
                 </figure>
 
                 <div class="press-content">
@@ -816,7 +864,7 @@
 
                     <span class="dot"></span>
 
-                    <time datetime="2022-02-23">Jun 10, 2022</time>
+                    <time datetime="2022-06-10">Jun 10, 2022</time>
                   </div>
 
                   <h3 class="h3 press-item-title">TRT World Article</h3>
@@ -830,11 +878,11 @@
               </a>
             </li>
 
-            <li class="press-post-item">
-              <a href="https://youtu.be/Cs2YjHGVWl0">
+            <li class="press-post-item active" press-data-filter-item press-data-category="event">
+              <a href="https://youtu.be/Cs2YjHGVWl0" target="_blank">
 
                 <figure class="press-banner-box">
-                  <img src="./assets/images/TRT.JPG" alt="TRT International Metaverse & Broadcasting Forum" loading="lazy">
+                  <img src="./assets/images/TRT-Metaverse-Conference.jpg" alt="TRT International Metaverse & Broadcasting Forum" loading="lazy">
                 </figure>
 
                 <div class="press-content">
@@ -844,7 +892,7 @@
 
                     <span class="dot"></span>
 
-                    <time datetime="2022-02-23">Jun 10, 2022</time>
+                    <time datetime="2022-06-10">Jun 10, 2022</time>
                   </div>
 
                   <h3 class="h3 press-item-title">TRT Metaverse Conference</h3>
@@ -858,11 +906,11 @@
               </a>
             </li>
 
-            <li class="press-post-item">
-              <a href="https://www.timesnewswire.com/pressrelease/next-by-trt-world-forum-brought-together-globally-known-young-professionals/">
+            <li class="press-post-item active" press-data-filter-item press-data-category="article">
+              <a href="https://www.timesnewswire.com/pressrelease/next-by-trt-world-forum-brought-together-globally-known-young-professionals/" target="_blank">
 
                 <figure class="press-banner-box">
-                  <img src="./assets/images/TRT 3.JPG" alt="NEXT by TRT World Forum" loading="lazy">
+                  <img src="./assets/images/TRT-World-Forum-Article.jpg" alt="TRT World Forum Article" loading="lazy">
                 </figure>
 
                 <div class="press-content">
@@ -872,10 +920,10 @@
 
                     <span class="dot"></span>
 
-                    <time datetime="2022-02-23">May 17, 2022</time>
+                    <time datetime="2022-05-17">May 17, 2022</time>
                   </div>
 
-                  <h3 class="h3 press-item-title">NEXT by TRT World Forum</h3>
+                  <h3 class="h3 press-item-title">TRT World Forum Article</h3>
 
                   <p class="press-text">
                     “NEXT by TRT World Forum” Brought Together Globally Known Young Professionals
@@ -885,6 +933,259 @@
 
               </a>
             </li>
+
+            <li class="press-post-item active" press-data-filter-item press-data-category="event">
+              <a href="https://drive.google.com/file/d/1I5xYLyQuiyK-ElH-8ASjcVrpza1TbTut/view?usp=sharing" target="_blank">
+
+                <figure class="press-banner-box">
+                  <img src="./assets/images/NEXT-By-TRT-World-Forum.jpg" alt="NEXT by TRT World Forum" loading="lazy">
+                </figure>
+
+                <div class="press-content">
+
+                  <div class="press-meta">
+                    <p class="press-category">Event</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-03-17">May 17, 2022</time>
+                  </div>
+
+                  <h3 class="h3 press-item-title">TRT World Forum</h3>
+
+                  <p class="press-text">
+                    NEXT by TRT World Forum
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="press-post-item active" press-data-filter-item press-data-category="article">
+              <a href="https://www.iiterate.de/projects/drill-training" target="_blank">
+
+                <figure class="press-banner-box">
+                  <img src="./assets/images/Priyme-Inc.jpg" alt="Priyme Inc. Partnership" loading="lazy">
+                </figure>
+
+                <div class="press-content">
+
+                  <div class="press-meta">
+                    <p class="press-category">Article</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-04-06">Apr 6, 2022</time>
+                  </div>
+
+                  <h3 class="h3 press-item-title">Priyme Inc. Partnership</h3>
+
+                  <p class="press-text">
+                    Drill Usage XR Training
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="press-post-item active" press-data-filter-item press-data-category="podcast">
+              <a href="https://open.spotify.com/episode/4eSHIMT206OdRNb5kkq8vc" target="_blank">
+
+                <figure class="press-banner-box">
+                  <img src="./assets/images/This-Crypto-Life-Podcast.jpg" alt="This Crypto Life Podcast" loading="lazy">
+                </figure>
+
+                <div class="press-content">
+
+                  <div class="press-meta">
+                    <p class="press-category">Podcast</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-03-10">Mar 10, 2022</time>
+                  </div>
+
+                  <h3 class="h3 press-item-title">This Crypto Life Podcast</h3>
+
+                  <p class="press-text">
+                    Into The Metaverse ft. Faisal U-K
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="press-post-item active" press-data-filter-item press-data-category="podcast">
+              <a href="https://open.spotify.com/episode/1U6ligyJ59ZVbKqV2NUAL1" target="_blank">
+
+                <figure class="press-banner-box">
+                  <img src="./assets/images/What-Is-The-Metaverse-And-The-Opportunities-It-Creates-For-Architects.jpg" alt="ATN Podcast" loading="lazy">
+                </figure>
+
+                <div class="press-content">
+
+                  <div class="press-meta">
+                    <p class="press-category">Podcast</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2021-12-23">Dec 23, 2021</time>
+                  </div>
+
+                  <h3 class="h3 press-item-title">ATN Podcast</h3>
+
+                  <p class="press-text">
+                    #29 What Is The Metaverse And The Opportunities It Creates For Architects?
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="press-post-item active" press-data-filter-item press-data-category="podcast">
+              <a href="https://www.youtube.com/watch?v=wVDhz9lgXJ4" target="_blank">
+
+                <figure class="press-banner-box">
+                  <img src="./assets/images/Ep-17-Architects-in-the-Metaverse.jpg" alt="Two Worlds Design Podcast" loading="lazy">
+                </figure>
+
+                <div class="press-content">
+
+                  <div class="press-meta">
+                    <p class="press-category">Podcast</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2021-12-18">Dec 18, 2021</time>
+                  </div>
+
+                  <h3 class="h3 press-item-title">Two Worlds Design Podcast</h3>
+
+                  <p class="press-text">
+                    Ep 17: Architects in the Metaverse | Faisal UK | Two Worlds Design podcast
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="press-post-item active" press-data-filter-item press-data-category="article">
+              <a href="https://www.illusorr.com/post/pylontalks-icakostika" target="_blank">
+
+                <figure class="press-banner-box">
+                  <img src="./assets/images/PYLON-TALKS---ICA-&-KOSTIKA.jpg" alt="PYLON Talks Article" loading="lazy">
+                </figure>
+
+                <div class="press-content">
+
+                  <div class="press-meta">
+                    <p class="press-category">Article</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2021-03-28">Mar 28, 2021</time>
+                  </div>
+
+                  <h3 class="h3 press-item-title">PYLON Talks Article</h3>
+
+                  <p class="press-text">
+                    "PYLON TALKS - ICA & KOSTIKA" ILLUSORR Article
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="press-post-item active" press-data-filter-item press-data-category="podcast">
+              <a href="https://www.youtube.com/live/OW2B7RSWDzU" target="_blank">
+
+                <figure class="press-banner-box">
+                  <img src="./assets/images/PYLON-TALKS---ICA-&-KOSTIKA-YT.jpg" alt="ILLUSORR PYLON Talks" loading="lazy">
+                </figure>
+
+                <div class="press-content">
+
+                  <div class="press-meta">
+                    <p class="press-category">Podcast</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2021-03-28">Mar 28, 2021</time>
+                  </div>
+
+                  <h3 class="h3 press-item-title">ILLUSORR PYLON Talks</h3>
+
+                  <p class="press-text">
+                    PYLON TALKS - ICA & KOSTIKA
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="press-post-item active" press-data-filter-item press-data-category="podcast">
+              <a href="https://open.spotify.com/episode/4xS8QqZI1QdQDbsZLFfR3K" target="_blank">
+
+                <figure class="press-banner-box">
+                  <img src="./assets/images/The-IBD-Hub-Podcast.jpg" alt="The IBD Hub Podcast" loading="lazy">
+                </figure>
+
+                <div class="press-content">
+
+                  <div class="press-meta">
+                    <p class="press-category">Podcast</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2021-03-11">Mar 11, 2021</time>
+                  </div>
+
+                  <h3 class="h3 press-item-title">The IBD Hub Podcast</h3>
+
+                  <p class="press-text">
+                    EP20- *CLUBHOUSE Edition* How can Millennials save the field of Architecture with Faisal U-K
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+            <li class="press-post-item active" press-data-filter-item press-data-category="article">
+              <a href="https://www.yumpu.com/en/document/read/63817648/issue-01-community/56" target="_blank">
+
+                <figure class="press-banner-box">
+                  <img src="./assets/images/Community-in-the-Age-of-Datascapes.jpg" alt="Datascape by Faisal U-K" loading="lazy">
+                </figure>
+
+                <div class="press-content">
+
+                  <div class="press-meta">
+                    <p class="press-category">Article</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2020-08-09">Aug 9, 2020</time>
+                  </div>
+
+                  <h3 class="h3 press-item-title">:scale mag Article</h3>
+
+                  <p class="press-text">
+                    Community in the Age of Datascapes
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
 
 
           </ul>

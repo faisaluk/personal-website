@@ -934,10 +934,82 @@ main {
 
 .press-posts { margin-bottom: 10px; }
 
+
+
+/* Filter functionality for Press section */
+
+.press-filter-list { /* New class for press filter list */
+  display: none;
+}
+
+.press-filter-select-box { /* New class for press filter select box */
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.press-filter-select { /* New class for press filter select */
+  background: var(--eerie-black-2);
+  color: var(--light-gray);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--jet);
+  border-radius: 14px;
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+}
+
+.press-filter-select.active .select-icon { /* Adjust selector for press filter active state */
+  transform: rotate(0.5turn);
+}
+
+.press-select-list { /* New class for press select list */
+  background: var(--eerie-black-2);
+  position: absolute;
+  top: calc(100% + 6px);
+  width: 100%;
+  padding: 6px;
+  border: 1px solid var(--jet);
+  border-radius: 14px;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: 0.15s ease-in-out;
+}
+
+.press-filter-select.active + .press-select-list { /* Adjust selector for press filter active state */
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.press-select-item button { /* New class for press select item button */
+  background: var(--eerie-black-2);
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-300);
+  text-transform: capitalize;
+  width: 100%;
+  padding: 8px 10px;
+  border-radius: 8px;
+}
+
+.press-select-item button:hover { --eerie-black-2: hsl(240, 2%, 20%); }
+
 .press-posts-list {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
+}
+
+.press-post-item { display: none; }
+
+.press-post-item.active {
+  display: block;
+  animation: scaleUp 0.25s ease forwards;
 }
 
 .press-post-item > a {
@@ -1514,14 +1586,14 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 
   /**
-   * COMPANIES
+   * COMPANIES & PRESS
    */
 
   .article-title { padding-bottom: 20px; }
 
-  .filter-select-box { display: none; }
+  .filter-select-box, .press-filter-select-box { display: none; }
 
-  .filter-list {
+  .filter-list, .press-filter-list {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -1530,15 +1602,15 @@ textarea.form-input::-webkit-resizer { display: none; }
     margin-bottom: 30px;
   }
 
-  .filter-item button {
+  .filter-item button, .press-filter-item button {
     color: var(--light-gray);
     font-size: var(--fs-5);
     transition: var(--transition-1);
   }
 
-  .filter-item button:hover { color: var(--light-gray-70); }
+  .filter-item button:hover, .press-filter-item button:hover { color: var(--light-gray-70); }
 
-  .filter-item button.active { color: var(--orange-yellow-crayola); }
+  .filter-item button.active, .press-filter-item button.active { color: var(--orange-yellow-crayola); }
 
   /* companies and press grid */
 
