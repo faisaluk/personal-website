@@ -185,4 +185,12 @@ for (let i = 0; i < formInputs.length; i++) {
   });
 }
 
+const pressBtn = document.querySelector("[data-nav-link='press']"); // Select the "Press" button
+
+pressBtn.addEventListener("click", function() {
+  history.pushState({}, "", "#press"); // Update browser history with "#press" fragment
+  // Optionally, scroll to the press section using JavaScript
+  document.getElementById("press").scrollIntoView();  
+});
+
 
