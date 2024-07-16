@@ -185,12 +185,25 @@ for (let i = 0; i < formInputs.length; i++) {
   });
 }
 
-const pressBtn = document.querySelector("[data-nav-link='press']"); // Select the "Press" button
+document.addEventListener('DOMContentLoaded', function() {
+  // Select the "Press" button using data attribute
+  const pressBtn = document.querySelector("[data-nav-link='press']");
 
-pressBtn.addEventListener("click", function() {
-  history.pushState({}, "", "#press"); // Update browser history with "#press" fragment
-  // Optionally, scroll to the press section using JavaScript
-  document.getElementById("press").scrollIntoView();  
+  if (pressBtn) { // Check if the element exists
+    pressBtn.addEventListener("click", function() {
+      // Update browser history with "#press" fragment
+      history.pushState({}, "", "#press");
+
+      // Optionally, scroll to the press section using JavaScript
+      const pressSection = document.getElementById("press");
+      if (pressSection) {
+        pressSection.scrollIntoView();
+      } else {
+        console.error("Element with id='press' not found.");
+      }
+    });
+  } else {
+    console.error("Element with data-nav-link='press' not found.");
+  }
 });
-
 
