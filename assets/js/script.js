@@ -77,110 +77,86 @@ for (let i = 0; i < navigationLinks.length; i++) {
 
 // Function to get select elements for companies page
 function getCompaniesSelectElements() {
-  const select = document.querySelector("[data-select]");
-  const selectItems = document.querySelectorAll("[data-select-item]");
-  const selectValue = document.querySelector("[data-select-value]");
-  const filterBtn = document.querySelectorAll("[data-filter-btn]");
-  const filterItems = document.querySelectorAll("[data-filter-item]");
-  return { select, selectItems, selectValue, filterBtn, filterItems };
+  return {
+    select: document.querySelector("[data-select]"),
+    selectItems: document.querySelectorAll("[data-select-item]"),
+    selectValue: document.querySelector("[data-select-value]"),
+    filterBtn: document.querySelectorAll("[data-filter-btn]"),
+    filterItems: document.querySelectorAll("[data-filter-item]")
+  };
 }
 
-// Function to get select elements for press page (similar structure with "press-" prefix)
+// Function to get select elements for press page
 function getPressSelectElements() {
-  const select = document.querySelector("[press-data-select]");
-  const selectItems = document.querySelectorAll("[press-data-select-item]");
-  const selectValue = document.querySelector("[press-data-select-value]");
-  const filterBtn = document.querySelectorAll("[press-data-filter-btn]");
-  const filterItems = document.querySelectorAll("[press-data-filter-item]");
-  console.log("Press filter elements:", select, selectItems);
-  return { select, selectItems, selectValue, filterBtn, filterItems };
+  return {
+    select: document.querySelector("[press-data-select]"),
+    selectItems: document.querySelectorAll("[press-data-select-item]"),
+    selectValue: document.querySelector("[press-data-select-value]"),
+    filterBtn: document.querySelectorAll("[press-data-filter-btn]"),
+    filterItems: document.querySelectorAll("[press-data-filter-item]")
+  };
 }
 
-// Filter function with conditional logic for companies and press pages
+// Generic filter function
 const filterFunc = function (selectedValue, filterElements) {
   for (let i = 0; i < filterElements.length; i++) {
-    // Check if selectedValue is "all"
     if (selectedValue === "all") {
       filterElements[i].classList.add("active");
     } else {
-      // Split the categories from the data-category attribute
-      const itemCategories = filterElements[i].dataset.category.split(",");
-
-      // Check if any of the item categories match the selectedValue
-      let itemMatches = false;
-      for (let j = 0; j < itemCategories.length; j++) {
-        if (selectedValue.toLowerCase() === itemCategories[j].trim().toLowerCase()) {
-          itemMatches = true;
-          console.log("itemMatches:", itemMatches); // Added console log
-          break; // Exit the inner loop if a match is found
+      // Check if the element has the data-category attribute
+      if (filterElements[i].dataset && filterElements[i].dataset.category) {
+        const itemCategories = filterElements[i].dataset.category.split(",");
+        const itemMatches = itemCategories.some(cat => cat.trim().toLowerCase() === selectedValue.toLowerCase());
+        if (itemMatches) {
+          filterElements[i].classList.add("active");
+        } else {
+          filterElements[i].classList.remove("active");
         }
-      }
-
-      // Apply active class based on the match
-      if (itemMatches) {
-        filterElements[i].classList.add("active");
       } else {
+        // If there's no data-category, remove the active class
         filterElements[i].classList.remove("active");
+        console.warn("Missing data-category attribute for element:", filterElements[i]);
       }
     }
   }
 };
 
-// Get select elements based on the page type
-let selectElements;
-if (document.querySelector("[data-select]")) {
-  selectElements = getCompaniesSelectElements();
-} else {
-  selectElements = getPressSelectElements();
+// Setup filter functionality
+function setupFilter(elements) {
+  const { select, selectItems, selectValue, filterBtn, filterItems } = elements;
+
+  select.addEventListener("click", function () {
+    elementToggleFunc(this);
+  });
+
+  for (let i = 0; i < selectItems.length; i++) {
+    selectItems[i].addEventListener("click", function () {
+      let selectedValue = this.innerText.toLowerCase();
+      selectValue.innerText = this.innerText;
+      filterFunc(selectedValue, filterItems);
+    });
+  }
+
+  let lastClickedBtn = filterBtn[0];
+  for (let i = 0; i < filterBtn.length; i++) {
+    filterBtn[i].addEventListener("click", function () {
+      let selectedValue = this.innerText.toLowerCase();
+      selectValue.innerText = this.innerText;
+      filterFunc(selectedValue, filterItems);
+
+      lastClickedBtn.classList.remove("active");
+      this.classList.add("active");
+      lastClickedBtn = this;
+    });
+  }
 }
 
-const { select, selectItems, selectValue, filterBtn, filterItems } = selectElements;
-
-// Event listener for select click
-select.addEventListener("click", function () {
-  elementToggleFunc(this);
+// Setup filters for both sections
+document.addEventListener('DOMContentLoaded', function() {
+  if (document.querySelector("[data-select]")) {
+    setupFilter(getCompaniesSelectElements());
+  }
+  if (document.querySelector("[press-data-select]")) {
+    setupFilter(getPressSelectElements());
+  }
 });
-
-// Event listener for all select items
-for (let i = 0; i < selectItems.length; i++) {
-  selectItems[i].addEventListener("click", function () {
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    filterFunc(selectedValue, filterItems);
-  });
-}
-
-// Event listener for all filter buttons (similar logic with conditional statements)
-let lastClickedBtn = filterBtn[0];
-
-for (let i = 0; i < filterBtn.length; i++) {
-  filterBtn[i].addEventListener("click", function () {
-    let selectedValue = this.innerText.toLowerCase();
-    selectValue.innerText = this.innerText;
-    filterFunc(selectedValue, filterItems);
-
-    lastClickedBtn.classList.remove("active");
-    this.classList.add("active");
-    lastClickedBtn = this;
-  });
-}
-
-
-// contact form variables
-const form = document.querySelector("[data-form]");
-const formInputs = document.querySelectorAll("[data-form-input]");
-const formBtn = document.querySelector("[data-form-btn]");
-
-// add event to all form input field
-for (let i = 0; i < formInputs.length; i++) {
-  formInputs[i].addEventListener("input", function () {
-
-    // check form validation
-    if (form.checkValidity()) {
-      formBtn.removeAttribute("disabled");
-    } else {
-      formBtn.setAttribute("disabled", "");
-    }
-
-  });
-}
