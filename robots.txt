@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+Disallow: /admin/
+
+User-agent: Googlebot-Image
+Allow: /assets/images/
+Allow: /assets/images/*.jpg$
+Allow: /assets/images/*.jpeg$
+Allow: /assets/images/*.png$
+Allow: /assets/images/*.gif$
+Allow: /assets/images/*.svg$
+Allow: /assets/images/*.webp$
+
+Sitemap: https://www.faisaluk.com/sitemap.xml
