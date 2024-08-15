@@ -180,6 +180,18 @@ function setupFilter(elements) {
       let selectedValue = this.innerText.toLowerCase();
       selectValue.innerText = this.innerText;
       filterFunc(selectedValue, filterItems);
+
+      // Close the dropdown
+      select.classList.remove("active");
+
+      // Update the active state of filter buttons
+      filterBtn.forEach(btn => {
+        if (btn.innerText.toLowerCase() === selectedValue) {
+          btn.classList.add("active");
+        } else {
+          btn.classList.remove("active");
+        }
+      });
     });
   }
 
@@ -223,26 +235,37 @@ document.addEventListener('DOMContentLoaded', function() {
   // Get all elements with class "pdf-opener"
   var pdfOpeners = document.getElementsByClassName("pdf-opener");
 
+  var iframe = document.getElementById('pdf-iframe');
+
   // Attach click event to all pdf openers
   for (var i = 0; i < pdfOpeners.length; i++) {
-    pdfOpeners[i].addEventListener('click', function() {
+    pdfOpeners[i].addEventListener('click', function(e) {
+      e.preventDefault();
       var pdfPath = this.getAttribute('data-pdf-path');
-      document.getElementById('pdf-iframe').src = pdfPath;
-      modal.style.display = "block";
+      
+      // Check if it's a mobile device
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        // Open PDF in a new tab for mobile devices
+        window.open(pdfPath, '_blank');
+      } else {
+        // Use iframe for desktop
+        iframe.src = pdfPath;
+        modal.style.display = "block";
+      }
     });
   }
 
   // When the user clicks on <span> (x), close the modal
   span.onclick = function() {
     modal.style.display = "none";
-    document.getElementById('pdf-iframe').src = "";
+    iframe.src = "";
   }
 
   // When the user clicks anywhere outside of the modal, close it
   window.onclick = function(event) {
     if (event.target == modal) {
       modal.style.display = "none";
-      document.getElementById('pdf-iframe').src = "";
+      iframe.src = "";
     }
   }
 });
