@@ -73,6 +73,41 @@ for (let i = 0; i < navigationLinks.length; i++) {
 }
 
 
+// CONTACT page navigation variables
+document.addEventListener('DOMContentLoaded', function() {
+  const gotoButtons = document.querySelectorAll('[data-goto-section]');
+  
+  gotoButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      const sectionName = this.getAttribute('data-goto-section');
+      const targetSection = document.querySelector(`[data-page="${sectionName}"]`);
+      
+      if (targetSection) {
+        // Remove 'active' class from all pages
+        pages.forEach(page => page.classList.remove("active"));
+        
+        // Add 'active' class to target section
+        targetSection.classList.add("active");
+        
+        // Remove 'active' class from all navigation links
+        navigationLinks.forEach(link => link.classList.remove("active"));
+        
+        // Add 'active' class to corresponding navigation link
+        const correspondingNavLink = document.querySelector(`[data-nav-link]:not([data-goto-section])`);
+        if (correspondingNavLink) {
+          correspondingNavLink.classList.add("active");
+        }
+        
+        // Scroll to top of the page
+        window.scrollTo(0, 0);
+      }
+    });
+  });
+});
+
+
+
+
 
 
 // Function to get select elements for companies page
@@ -94,6 +129,17 @@ function getPressSelectElements() {
     selectValue: document.querySelector("[press-data-select-value]"),
     filterBtn: document.querySelectorAll("[press-data-filter-btn]"),
     filterItems: document.querySelectorAll("[press-data-filter-item]")
+  };
+}
+
+// Function to get select elements for writings page
+function getWritingsSelectElements() {
+  return {
+    select: document.querySelector("[writings-data-select]"),
+    selectItems: document.querySelectorAll("[writings-data-select-item]"),
+    selectValue: document.querySelector("[writings-data-select-value]"),
+    filterBtn: document.querySelectorAll("[writings-data-filter-btn]"),
+    filterItems: document.querySelectorAll("[writings-data-filter-item]")
   };
 }
 
@@ -158,5 +204,45 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   if (document.querySelector("[press-data-select]")) {
     setupFilter(getPressSelectElements());
+  }
+  if (document.querySelector("[writings-data-select]")) {
+    setupFilter(getWritingsSelectElements());
+  }
+});
+
+
+
+// WRITINGS PDF POP-UP
+document.addEventListener('DOMContentLoaded', function() {
+  // Get the modal
+  var modal = document.getElementById('pdf-modal');
+
+  // Get the <span> element that closes the modal
+  var span = document.getElementsByClassName("close")[0];
+
+  // Get all elements with class "pdf-opener"
+  var pdfOpeners = document.getElementsByClassName("pdf-opener");
+
+  // Attach click event to all pdf openers
+  for (var i = 0; i < pdfOpeners.length; i++) {
+    pdfOpeners[i].addEventListener('click', function() {
+      var pdfPath = this.getAttribute('data-pdf-path');
+      document.getElementById('pdf-iframe').src = pdfPath;
+      modal.style.display = "block";
+    });
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  span.onclick = function() {
+    modal.style.display = "none";
+    document.getElementById('pdf-iframe').src = "";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+      document.getElementById('pdf-iframe').src = "";
+    }
   }
 });
