@@ -1,5 +1,21 @@
 'use strict';
 
+// 404 ERROR PAGE
+window.addEventListener('load', () => {
+  const checkStatus = () => {
+    fetch(window.location.href, { method: 'HEAD' })
+      .then(response => {
+        if (response.status === 404) {
+          window.location.href = '.../404.html'; // Replace with your 404 page path
+        }
+      })
+      .catch(error => {
+        console.error('Error checking status:', error);
+      });
+  };
+
+  checkStatus();
+});
 
 
 // element toggle function
