@@ -1177,14 +1177,14 @@ main {
   align-items: center;
   color: var(--white-2);
   font-size: 18px;
-  opacity: 0.7;
+  opacity: 1;
   cursor: pointer;
 }
 
 .close ion-icon { --ionicon-stroke-width: 50px; }
 
 .close:hover,
-.close:focus { opacity: 1; }
+.close:focus { opacity: 0.7; }
 
 .iframe-container {
   flex-grow: 1;
@@ -1996,3 +1996,44 @@ textarea.form-input::-webkit-resizer { display: none; }
   .timeline-text { max-width: 700px; }
 
 }
+
+
+
+
+/* 404 ERROR PAGE */
+
+.error-container {
+  
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 50%;
+  max-height: 50%;
+  padding: 100px;
+  background: var(--eerie-black-2); /* Use existing color */
+  color: var(--white-2); /* Use existing color */
+  border-radius: 20px;
+  box-shadow: var(--shadow-4); /* Use existing shadow */
+ }
+
+ .error-title {
+  font-family: var(--ff-poppins); /* Use existing font */
+  font-size: var(--fs-1); /* Use existing font size */
+   margin-bottom: 20px;
+ }
+
+ .error-message {
+  font-family: var(--ff-poppins); /* Use existing font */
+  font-size: var(--fs-4); /* Use existing font size */
+  color: var(--light-gray); /* Use existing color */
+  margin-bottom: 30px;
+ }
+
+ .error-link {
+  color: var(--orange-yellow-crayola); /* Use existing color */
+  text-decoration: underline;
+ }
