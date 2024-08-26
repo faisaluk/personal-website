@@ -196,7 +196,7 @@
           </li>
 
           <li class="navbar-item">
-            <a href="#press" class="navbar-link" data-nav-link>Press</a>
+            <button class="navbar-link" data-nav-link>Press</button>
             
           </li>
 
@@ -613,7 +613,7 @@
         - #PRESS
       -->
 
-      <article id="press" class="press" data-page="press">
+      <article class="press" data-page="press">
 
         <header>
           <h2 class="h2 article-title">Press</h2>
@@ -1661,6 +1661,10 @@
             </li>
 
             <li class="writings-filter-item">
+              <button writings-data-filter-btn>AI</button>
+            </li>
+
+            <li class="writings-filter-item">
               <button writings-data-filter-btn>Metaverse</button>
             </li>
 
@@ -1693,6 +1697,10 @@
               </li>
 
               <li class="writings-select-item">
+                <button writings-data-select-item>AI</button>
+              </li>
+
+              <li class="writings-select-item">
                 <button writings-data-select-item>Metaverse</button>
               </li>
 
@@ -1705,6 +1713,23 @@
           </div>
 
           <ul class="writings-posts-list">
+
+            <li class="writings-post-item active" writings-data-filter-item data-category="ai">
+              <a class="pdf-opener" data-pdf-path="./assets/documents/AI For Architects - Presentation.pdf" href="#">
+                
+                <div class="writings-content">
+                  <div class="writings-meta">
+                    <p class="writings-category">AI</p>
+                    <span class="dot"></span>
+                    <time datetime="2024-08">Aug 2024</time>
+                  </div>
+                  <h3 class="h3 writings-item-title">AI For Architecture Presentation</h3>
+                  <p class="writings-text">
+                    “Humanity’s effort to mimic / surpass human intelligence using computers” - Faisal U-K...
+                  </p>
+                </div>
+              </a>
+            </li>
 
             <li class="writings-post-item active" writings-data-filter-item data-category="metaverse">
               <a class="pdf-opener" data-pdf-path="./assets/documents/The Spectrum of Reality_ From Virtual Reality to Material World.pdf" href="#">
