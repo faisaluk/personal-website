@@ -12,4 +12,4 @@ Allow: /assets/images/*.gif$
 Allow: /assets/images/*.svg$
 Allow: /assets/images/*.webp$
 
-Sitemap: https://www.faisaluk.com/sitemap.xml
+Sitemap: https://faisaluk.com/sitemap.xml
