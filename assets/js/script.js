@@ -159,6 +159,17 @@ function getWritingsSelectElements() {
   };
 }
 
+// Function to get select elements for portfolio page
+function getPortfolioSelectElements() {
+  return {
+    select: document.querySelector("[portfolio-data-select]"),
+    selectItems: document.querySelectorAll("[portfolio-data-select-item]"),
+    selectValue: document.querySelector("[portfolio-data-select-value]"),
+    filterBtn: document.querySelectorAll("[portfolio-data-filter-btn]"),
+    filterItems: document.querySelectorAll("[portfolio-data-filter-item]")
+  };
+}
+
 // Generic filter function
 const filterFunc = function (selectedValue, filterElements) {
   for (let i = 0; i < filterElements.length; i++) {
@@ -236,11 +247,14 @@ document.addEventListener('DOMContentLoaded', function() {
   if (document.querySelector("[writings-data-select]")) {
     setupFilter(getWritingsSelectElements());
   }
+  if (document.querySelector("[portfolio-data-select]")) {
+    setupFilter(getPortfolioSelectElements());
+  }
 });
 
 
 
-// WRITINGS PDF POP-UP
+// WRITINGS, PORTFOLIO PDF POP-UP
 document.addEventListener('DOMContentLoaded', function() {
   // Get the modal
   var modal = document.getElementById('pdf-modal');
